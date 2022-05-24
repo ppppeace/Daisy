@@ -299,79 +299,84 @@ const   mongoose    = require('mongoose'),
 //theater
         const theaterlist = [
             //Siam cinema
-            {
+            {//gold
                 name: "Cinema 1",
-                movie: "62861bcc33e26b636aa14664",
-                cinema: "62861bcc33e26b636aa146a6"
+                movie: "628c9f24e307497175750912",
+                cinema: "628cfb6cd18106c67376bac8"
             },
-            {
+            {//fan
                 name: "Cinema 2",
-                movie: "62861bcc33e26b636aa14683",
-                cinema: "62861bcc33e26b636aa146a6"
+                movie: "628c9f24e307497175750906",
+                cinema: "628cfb6cd18106c67376bac8"
             },
-            {
+            {//six
                 name: "Cinema 3",
-                movie: "62861bcc33e26b636aa14688",
-                cinema: "62861bcc33e26b636aa146a6"
+                movie: "628c9f24e307497175750925",
+                cinema: "628cfb6cd18106c67376bac8"
             },
             //Paragon cinema
-            {
+            { //gold
                 name: "Cinema 1",
-                movie: "62861bcc33e26b636aa14664",
-                cinema: "62861bcc33e26b636aa146a7"
+                movie: "628c9f24e307497175750912",
+                cinema: "628cfb6cd18106c67376bac9"
             },
-            {
+            {//seoul
                 name: "Cinema 2",
-                movie: "62861bcc33e26b636aa1467e",
-                cinema: "62861bcc33e26b636aa146a7"
+                movie: "628c9f24e307497175750920",
+                cinema: "628cfb6cd18106c67376bac9"
             },
-            {
+            {//fan
                 name: "Cinema 3",
-                movie: "62861bcc33e26b636aa14688",
-                cinema: "62861bcc33e26b636aa146a7"
+                movie: "628c9f24e307497175750906",
+                cinema: "628cfb6cd18106c67376bac9"
             },
             //Param 2 cinema
-            {
+            {//fan
                 name: "Cinema 1",
-                movie: "62861bcc33e26b636aa14664",
-                cinema: "62861bcc33e26b636aa146a8"
+                movie: "628c9f24e307497175750906",
+                cinema: "628cfb6cd18106c67376baca"
             },
-            {
+            {//fuck
                 name: "Cinema 2",
-                movie: "62861bcc33e26b636aa14679",
-                cinema: "62861bcc33e26b636aa146a8"
+                movie: "628c9f24e30749717575091b",
+                cinema: "628cfb6cd18106c67376baca"
             },
-            {
+            {//doc
                 name: "Cinema 3",
-                movie: "62861bcc33e26b636aa14675",
-                cinema: "62861bcc33e26b636aa146a8"
+                movie: "628c9f24e307497175750917",
+                cinema: "628cfb6cd18106c67376baca"
             },
             //Mega-Bangna cinema
-            {
+            {//seoul
                 name: "Cinema 1",
-                movie: "62861bcc33e26b636aa14675",
-                cinema: "62861bcc33e26b636aa146a9"
+                movie: "628c9f24e307497175750920",
+                cinema: "628cfb6cd18106c67376bacb"
             },
-            {
+            {//doc
                 name: "Cinema 2",
-                movie: "62861bcc33e26b636aa14670",
-                cinema: "62861bcc33e26b636aa146a9"
+                movie: "628c9f24e307497175750917",
+                cinema: "628cfb6cd18106c67376bacb"
             },
-            {
+            {//sonic
                 name: "Cinema 3",
-                movie: "62861bcc33e26b636aa1465f",
-                cinema: "62861bcc33e26b636aa146a9"
+                movie: "628c9f24e307497175750901",
+                cinema: "628cfb6cd18106c67376bacb"
+            },
+            {//top
+                name: "Cinema 4",
+                movie: "628c9f24e30749717575092a",
+                cinema: "628cfb6cd18106c67376bacb"
             },
             //Saraburi cinema
-            {
+            {//lost
                 name: "Cinema 1",
-                movie: "62861bcc33e26b636aa14669",
-                cinema: "62861bcc33e26b636aa146aa"
+                movie: "628c9f24e30749717575090b",
+                cinema: "628cfb6cd18106c67376bacc"
             },
-            {
+            {//sonic
                 name: "Cinema 2",
-                movie: "62861bcc33e26b636aa14675",
-                cinema: "62861bcc33e26b636aa146aa"
+                movie: "628c9f24e307497175750901",
+                cinema: "628cfb6cd18106c67376bacc"
             }
         ];
 
@@ -710,240 +715,256 @@ const seatlist = [
             {
                 time: "11:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96940"
+                theater: "628cfef9a95847a82823d27c"
             },
             {
                 time: "14:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96940"
+                theater: "628cfef9a95847a82823d27c"
             },
             {
                 time: "22:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96940"
+                theater: "628cfef9a95847a82823d27c"
             },
             //Siam cinema 2
             {
                 time: "12:00",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96941"
+                theater: "628cfef9a95847a82823d27d"
             },
             {
                 time: "15:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96941"
+                theater: "628cfef9a95847a82823d27d"
             },
             {
                 time: "19:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96941"
+                theater: "628cfef9a95847a82823d27d"
             },
             {
                 time: "23:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96941"
+                theater: "628cfef9a95847a82823d27d"
             },
             //Siam cinema 3
             {
                 time: "13:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96942"
+                theater: "628cfef9a95847a82823d27e"
             },
             {
                 time: "17:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96942"
+                theater: "628cfef9a95847a82823d27e"
             },
             {
                 time: "20:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96942"
+                theater: "628cfef9a95847a82823d27e"
             },
             //Paragon cinema 1
             {
                 time: "10:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96943"
+                theater: "628cfef9a95847a82823d27f"
             },
             {
                 time: "14:00",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96943"
+                theater: "628cfef9a95847a82823d27f"
             },
             {
                 time: "18:00",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96943"
+                theater: "628cfef9a95847a82823d27f"
             },
             {
                 time: "22:00",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96943"
+                theater: "628cfef9a95847a82823d27f"
             },
             //Paragon cinema 2
             {
                 time: "10:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96944"
+                theater: "628cfef9a95847a82823d280"
             },
             {
                 time: "15:50",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96944"
+                theater: "628cfef9a95847a82823d280"
             },
             {
                 time: "19:20",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96944"
+                theater: "628cfef9a95847a82823d280"
             },
             {
                 time: "23:20",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96944"
+                theater: "628cfef9a95847a82823d280"
             },
             //Paragon cinema 3
             {
                 time: "12:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96945"
+                theater: "628cfef9a95847a82823d281"
             },
             {
                 time: "15:10",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96945"
+                theater: "628cfef9a95847a82823d281"
             },
             {
                 time: "18:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96945"
+                theater: "628cfef9a95847a82823d281"
             },
             {
                 time: "24:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96945"
+                theater: "628cfef9a95847a82823d281"
             },
             //Param 2 cinema 1
             {
                 time: "10:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96946"
+                theater: "628cfef9a95847a82823d282"
             },
             {
                 time: "13:40",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96946"
+                theater: "628cfef9a95847a82823d282"
             },
             {
                 time: "18:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96946"
+                theater: "628cfef9a95847a82823d282"
             },
             {
                 time: "23:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96946"
+                theater: "628cfef9a95847a82823d282"
             },
             //Param 2 cinema 2
             {
                 time: "12:00",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96947"
+                theater: "628cfef9a95847a82823d283"
             },
             {
                 time: "17:00",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96947"
+                theater: "628cfef9a95847a82823d283"
             },
             {
                 time: "21:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96947"
+                theater: "628cfef9a95847a82823d283"
             },
             {
                 time: "24:20",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96947"
+                theater: "628cfef9a95847a82823d283"
             },
             //Param 2 cinema 3
             {
                 time: "11:40",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96948"
+                theater: "628cfef9a95847a82823d284"
             },
             {
                 time: "15:20",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96948"
+                theater: "628cfef9a95847a82823d284"
             },
             {
                 time: "19:50",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96948"
+                theater: "628cfef9a95847a82823d284"
             },
             {
                 time: "23:00",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96948"
+                theater: "628cfef9a95847a82823d284"
             },
             //Mega-Bangna cinema 1
             {
                 time: "11:40",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96949"
+                theater: "628cfef9a95847a82823d285"
             },
             {
                 time: "14:20",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96949"
+                theater: "628cfef9a95847a82823d285"
             },
             {
                 time: "19:00",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc96949"
+                theater: "628cfef9a95847a82823d285"
             },
             //Mega-Bangna cinema 2
             {
                 time: "12:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc9694a"
+                theater: "628cfef9a95847a82823d286"
             },
             {
                 time: "15:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc9694a"
+                theater: "628cfef9a95847a82823d286"
             },
             //Mega-Bangna cinema 3
             {
                 time: "13:10",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc9694b"
+                theater: "628cfef9a95847a82823d287"
             },
             {
                 time: "17:50",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc9694b"
+                theater: "628cfef9a95847a82823d287"
+            },
+            //Mega-Bangna cinema 4
+            {
+                time: "13:50",
+                seats: seatlist,
+                theater: "628cfef9a95847a82823d288"
+            },
+            {
+                time: "19:00",
+                seats: seatlist,
+                theater: "628cfef9a95847a82823d288"
+            },
+            {
+                time: "20:50",
+                seats: seatlist,
+                theater: "628cfef9a95847a82823d288"
             },
             //Saraburi cinema 1
             {
                 time: "12:50",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc9694c"
+                theater: "628cfef9a95847a82823d289"
             },
             {
                 time: "15:40",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc9694c"
+                theater: "628cfef9a95847a82823d289"
             },
             //Saraburi cinema 2
             {
                 time: "13:30",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc9694d"
+                theater: "628cfef9a95847a82823d28a"
             },
             {
                 time: "17:40",
                 seats: seatlist,
-                theater: "62863fa89b9bf207efc9694d"
+                theater: "628cfef9a95847a82823d28a"
             }
         ];
 
@@ -964,13 +985,13 @@ function seedDB(){
     //         });
     //     }
     // });
-    User.remove({}, function(err){
-        if(err){
-            console.log(err)
-        } else{
-            console.log('Data removal complete');
-        }
-    });
+    // User.remove({}, function(err){
+    //     if(err){
+    //         console.log(err)
+    //     } else{
+    //         console.log('Data removal complete');
+    //     }
+    // });
     // Cinema.remove({}, function(err){
     //     if(err){
     //         console.log(err);
@@ -1003,22 +1024,22 @@ function seedDB(){
     //         });
     //     }
     // });
-    // Showtime.remove({}, function(err){
-    //     if(err){
-    //         console.log(err);
-    //     }else{
-    //         console.log('Showtime remove completed');
-    //         showtimelist.forEach(function(seed){
-    //             Showtime.create(seed, function(err, showtime){
-    //                 if(err){
-    //                     console.log(err);
-    //                 }else{
-    //                     console.log('New showtime added!');
-    //                 }    
-    //             });
-    //         });
-    //     }
-    // });
+    Showtime.remove({}, function(err){
+        if(err){
+            console.log(err);
+        }else{
+            console.log('Showtime remove completed');
+            showtimelist.forEach(function(seed){
+                Showtime.create(seed, function(err, showtime){
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log('New showtime added!');
+                    }    
+                });
+            });
+        }
+    });
 
 }
 
