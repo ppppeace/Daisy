@@ -1,0 +1,23 @@
+<%- include("partials/header.ejs") %>
+<div class="container">
+    <div class="box my-5">
+        <h2 align = 'center' class="my-2">Login</h2> 
+        <form action="/login" method="POST">
+        <div class="mb-3 mx-5">
+            <label class="form-label"><h5>Username</h5></label>
+            <input type="text" class="form-control" name= "username" placeholder="Your Username">
+        </div>
+        <div class="mb-3 mx-5">
+            <label class="form-label"><h5>Password</h5></label>
+            <input type="password" class="form-control" name= "password" placeholder="Your Password">
+        </div>
+        <button type="submit" class="btn btn-primary ok">Login</button>
+        </form>
+    </div>
+    <div align = 'center'>
+        <h4>Don't have an account ?</h4>
+        <a href="/register" class="btn create btn-outline-warning"><b>Creat an account</b></a>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

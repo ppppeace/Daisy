@@ -1,0 +1,60 @@
+<%- include("../partials/header.ejs") %>
+<div class="container my-3">
+    <div class="new-movie my-3 px-5">
+        <h2 class="my-3" align = 'center'> Add new movies </h2> 
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label class="form-label">Movie Name</label>
+                    <input type="text" class="form-control" name= "movie[name]" placeholder="Movie Name">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="form-label">Release Date</label>
+                    <input type="text" class="form-control" name= "movie[date]" placeholder="Release Date">
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label class="form-label">Movie Genre</label>
+                    <input type="text" class="form-control" name= "movie[genre]" placeholder="Movie Genre">
+                </div>
+                <div class="mb-3 col-md-2">
+                    <label class="form-label">Time</label>
+                    <input type="text" class="form-control" name= "movie[time]" placeholder="Time">
+                </div>
+                <div class="mb-3 col-md-2">
+                    <label class="form-label">Rate</label>
+                    <input type="text" class="form-control" name= "movie[rate]" placeholder="Rate">
+                </div>
+                <div class="mb-3 col-md-2">
+                    <label class="form-label">Status</label>
+                    <input type="text" class="form-control" name= "movie[status]" placeholder="Status">
+                </div>
+                <div class="mb-3 col-md-2">
+                    <label class="form-label">Popular</label>
+                    <input type="text" class="form-control" name= "movie[pop]" placeholder="Popular">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Movie Description</label>
+                <input type="text" class="form-control" name= "movie[desc]" placeholder="Movie Description">
+            </div>
+            
+            <div class="mb-3">
+                <label class="form-label">Movie Image</label>
+                <input type="file" class="form-control" name= "img" accept="image/*">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Movie Trailer</label>
+                <input type="file" class="form-control" name= "trailer" accept="video/*">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" style="margin-left: 300px;">Submit</button>
+            <a href="/" class="back-edit">Go back</a>
+        </form>
+    </div>
+</div>
+
+
+<%- include("../partials/footer.ejs") %>

@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container py-3">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://s359.kapook.com/pagebuilder/d9a277e4-a488-491e-a82f-41d82e991ae1.jpg" class="d-block w-100" width="1500" height="450" alt="Fantastic Beasts: The Secrets of Dumbledore">
+      </div>
+      <div class="carousel-item">
+        <img src="https://dx35vtwkllhj9.cloudfront.net/paramountpictures/the-lost-city/images/regions/us/share.png" class="d-block w-100" width="1500" height="450" alt="The Lost City">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.online-station.net/wp-content/uploads/2022/02/Thumb-61.jpg" class="d-block w-100" width="1500" height="450" alt="Doctor Strange 2">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+
+  
+  <div class="album py-3 ">
+    <div class="container">
+    <h1>Box Office</h1>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <% movies.forEach(function(movies){ %>
+          <div class="col-sm-9">
+            <div class="card shadow-sm">
+                <img src="<%= movies.img %>" height="400px" class="index-image">
+              <div class="card-body">
+                <p class="card-text"><%= movies.name%> </p>
+                <p class="card-text"><%= movies.date%></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                    <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+    </div>
+  </div>
+
+
+<%- include("partials/footer.ejs") %>

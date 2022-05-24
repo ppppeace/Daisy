@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daisy Movie</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"defer></script>
+    <link rel="stylesheet" href="/stylesheets/main.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+      //show and hide dropdown list item on button click
+      function show_hide() {
+         var click = document.getElementById("list-items");
+         if(click.style.display ==="none") {
+            click.style.display ="block";
+         } else {
+            click.style.display ="none";
+         } 
+      }
+
+   </script>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous" defer></script>
+    <script src="https://kit.fontawesome.com/1792c6cfd6.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+  <nav class="nav justify-content-center header py-2">
+      <h3>Daisy Movie</h3>
+  </nav>
+  <nav class="navbar navbar-expand-lg header">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <% if (currentUser) { %>
+        <div class="navbar-brand px-5">
+          <a href="/user/<%= currentUser._id%>"> 
+            <img src="<%= currentUser.profileImage%>" class="rounded-circle" width="50" height="50">
+          </a>          
+        </div>
+        <% } %>
+       
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="nav-pills nav-fill navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+            <li class="nav-item px-2">
+              <a class="nav-link " aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="/movie" >Movie</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="/cinema" >Cinema</a>
+            </li>
+            <li class="nav-item px-3">
+              <a class="nav-link" href="/coming" >Coming Soon</a>
+            </li>
+        </ul>
+        <form class="d-flex" action="/search" method="GET">
+          <div class="input-group">
+              <input type="text" class="form-control d-flex" placeholder="Search Movie..." aria-describedby="button-addon2" list="datalistOptions" name="keyword">
+              <datalist id="datalistOptions">
+                  <option value="Sonic the Hedgehog 2">
+                  <option value="Fantastic Beasts: The Secrets of Dumbledore">
+                  <option value="The Lost City">
+                  <option value="Gold">
+                  <option value="Doctor Strange 2">
+                  <option value="It s a Flickering Life">
+                  <option value="Seoul Ghost Stories">
+                  <option value="Six Minutes to Midnight">
+                  <option value="Top Gun Maverick">
+                  <option value="Detective Conan the Movie 25">
+                  <option value="What to Do with the Dead Kaiju?">
+                  <option value="Jurassic World Dominion">
+              </datalist>
+              <button class="btn btn-outline-dark" type="submit" id="button-addon2">
+                  <i class="fa fa-search"></i>
+              </button>
+          </div>  
+      </form> 
+        <ul class="nav-pills nav-fill navbar-nav ">
+          <ul class="nav justify-content-end">
+            <% if (!currentUser) { %>
+            <li class="nav-item">
+                <a href="/login" class="btn btn-white" >Login</a>
+            </li>
+            <li class="nav-item">
+                <a href="/register" class="btn btn-white">Register</a>
+            </li>
+            <% } else if(currentUser.isAdmin) {%>
+              <li class="nav-item">
+                <a href="/new" class="btn btn-white" >Add new Movie</a>
+              </li>
+              
+            <% } else { %>
+             <div class="dropdown">
+              <button onclick="show_hide()" class="button"> <%= currentUser.username %> </button>
+               <center>
+                  <div id="list-items">
+                     <a href="/user/<%= currentUser._id%>">Profile<i class="fas fa-address-card"></i> </a>
+                     <a href="/logout"> Log out <i class="fas fa-sign-out-alt"></i></a>
+                  </div>
+               </center>
+              </div>
+              
+            <% } %>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <% if(error && error.length>0){ %>
+    <div class="alert alert-danger d-flex align-items-center" role = 'alert'>
+      <%=  error %>
+    </div>
+  <% } %>
+  <% if(success && success.length>0){ %>
+    <div class= 'alert alert-success d-flex align-items-center' role = 'alert'>
+      <%=  success %>
+    </div>
+  <% } %>
+  

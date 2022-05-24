@@ -1,0 +1,298 @@
+<%- include('../partials/header.ejs') %>
+
+<script src="/js/sortBygenre.js" defer></script>
+
+<div class="container">
+    <div class="py-5">
+        <h1 align = 'center' class="nowshow">Now Showing</h1>
+      </div>
+    <div class="d-flex">  
+        <div class="btn-group py-3">
+            <button class="btn create btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="left: 760%;">Sort by Genre</button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/movie/sortByname">Name</a></li>
+                <li><a class="dropdown-item" href="/movie/sortByrate">Rate (13 to 18)</a></li>
+                <li><a class="dropdown-item" href="/movie/sortBygenre">Genre</a></li>
+                <li><a class="dropdown-item" href="/movie/sortBydate">Date</a></li>
+            </ul>
+        </div>
+        <div class="btn-group p-3">
+            <button class="btn create btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="left: 1150%;" >Genre...</button>
+            <ul class="dropdown-menu">
+                <li><button class="dropdown-item" id="actionb">Action</button></li>
+                <li><button class="dropdown-item" id="adventureb">Adventure</button></li>
+                <li><button class="dropdown-item" id="animationb">Animation</button></li>
+                <li><button class="dropdown-item" id="comedyb">Comedy</button></li>
+                <li><button class="dropdown-item" id="dramab">Drama</button></li>
+                <li><button class="dropdown-item" id="fantasyb">Fantasy</button></li>
+                <li><button class="dropdown-item" id="horrorb">Horror</button></li>
+                <li><button class="dropdown-item" id="romanceb">Romance</button></li>
+                <li><button class="dropdown-item" id="thrillerb">Thriller</button></li>
+            </ul>
+        </div>
+    </div>      
+ 
+    <h3 class=" display-6 py-2" id="action"><i class="fas fa-angle-double-down" style="height: 50px;"></i> ACTION</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Action")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+
+    <h3 class=" display-6 py-2" id="animation"><i class="fas fa-angle-double-down" style="height: 50px;"></i>Animation</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Animation")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+
+    <h3 class=" display-6 py-2" id="adventure"><i class="fas fa-angle-double-down" style="height: 50px;"></i>ADVENTURE</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Adventure")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+    
+    <h3 class=" display-6 py-2" id="comedy"><i class="fas fa-angle-double-down" style="height: 50px;"></i>COMEDY</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Comedy")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+
+    <h3 class=" display-6 py-2" id="drama"><i class="fas fa-angle-double-down" style="height: 50px;"></i>Drama</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Drama")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+
+    <h3 class=" display-6 py-2" id="fantasy"><i class="fas fa-angle-double-down" style="height: 50px;"></i>Fantasy</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Fantasy")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+
+    <h3 class=" display-6 py-2" id="horror"><i class="fas fa-angle-double-down" style="height: 50px;"></i>Horror</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Horror")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+
+    <h3 class=" display-6 py-2" id="romance"><i class="fas fa-angle-double-down" style="height: 50px;"></i>Romance</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Romance")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+    
+    <h3 class=" display-6 py-2" id="thriller"><i class="fas fa-angle-double-down" style="height: 50px;"></i> THRILLER</h3>
+    <div class="album">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 py-2">
+            
+          <% movies.forEach(function(movies){ %>
+            <% if(movies.genre.includes("Thriller")){ %> 
+                <div class="col-sm-9">
+                    <div class="card shadow-sm">
+                        <img src="<%= movies.img %>" height="400px" class="index-image">
+                        <div class="card-body">
+                            <p class="card-text"><%= movies.name%> </p>
+                            <p class="card-text"><%= movies.date%></p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                                        <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                                    <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        <% }); %>  
+            
+          </div>
+    </div>
+
+</div>
+
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,46 @@
+<%- include("../partials/header.ejs") %>
+<script src = '/js/viewinfo.js' defer></script>
+
+<div class="container">
+  <div class="py-5">
+    <h1 align = 'center' class="nowshow">Now Showing</h1>
+  </div>
+    <div class="btn-group py-3">
+        <button class="btn create btn-outline-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="left: 1200%;">Sort by...</button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/movie/sortByname">Name</a></li>
+            <li><a class="dropdown-item" href="/movie/sortByrate">Rate (13 to 18)</a></li>
+            <li><a class="dropdown-item" href="/movie/sortBygenre">Genre</a></li>
+            <li><a class="dropdown-item" href="/movie/sortBydate">Date</a></li>
+        </ul>
+    </div>
+  <div class="album">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+        <% movies.forEach(function(movies){ %>
+          <div class="col-sm-9">
+            <div class="card shadow-sm">
+              <img src="<%= movies.img %>" height="400px" class="index-image">
+              <div class="card-body">
+                <p class="card-text"><%= movies.name%> </p>
+                <p class="card-text"><%= movies.date%></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="/movie/<%= movies._id %>" class="view btn btn-sm btn-outline-view">View</a>
+                    <% if(!(currentUser &&  currentUser.isAdmin)) {%>
+                      <a href="/movie/showtime/<%= movies._id %>" class="buy btn btn-sm btn-outline-buy">Buy</a>
+                    <% } %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% }) %>
+      
+      
+    </div>
+  </div>
+</div>
+
+
+<%- include("../partials/footer.ejs") %>

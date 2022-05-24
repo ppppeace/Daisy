@@ -1,0 +1,318 @@
+body{
+    background-color: lightcyan;
+}
+
+.edit-user{
+    border: 5px solid mediumspringgreen;
+    border-radius: 5px;
+    background-color: floralwhite;
+    width: 800px;
+    height: 680px; 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -400px;
+}
+
+.edit-movie{
+    border: 5px solid palegoldenrod;
+    border-radius: 5px;
+    background-color: linen;
+    width: 800px;
+    height: 1220px; 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -400px;
+}
+
+.new-movie{
+    border: 5px solid dodgerblue;
+    border-radius: 5px;
+    background-color: lavenderblush;
+    width: 800px;
+    height:580px; 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -400px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.button {
+    padding: 10px 30px;
+    font-size: 15px;
+}
+
+#list-items {
+   display: none;
+   position: absolute;
+   background-color: lightcyan;
+   min-width: 100px;
+}
+
+#list-items a {
+    display: block;
+    font-size: 18px;
+    background-color: lemonchiffon;
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.header{
+    background-color: rgb(155, 255, 222);
+}
+
+.footer{
+    background-color: rgb(155, 255, 222);
+    text-align: center;
+    height: 50px;
+}
+
+.drop{
+    border: 1 rem blue;
+}
+
+.date{
+    color: mediumslateblue;
+}
+
+.index-image{
+    object-fit: contain;
+}
+
+.btn:link, .btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0.5rem;
+    font-weight: 100;
+    position: relative;
+    padding: 0.5rem 1rem;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.3);
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.3);
+}
+
+.btn-white{
+    background-color: lightcyan;
+    color: gray;
+}
+
+#delete-form{
+    display: inline;
+}
+
+.center-show{
+   left: 200px;
+}
+
+.comfirm-ticket{
+    background-color: coral;
+    color: black;
+}
+
+.btn-edit{
+    background-color: deepskyblue;
+    color: black;
+    position: sticky;
+    font-size: 18px;
+    width: 80px;
+    height: 35px;
+}
+
+.btn-edit-user{
+    background-color: deepskyblue;
+    font-size: 25px;
+    color: black;
+    width: 150px;
+    height: 50px;
+    padding: 10px; 
+    position: sticky;
+    left: 150px;
+}
+
+.btn-delete{
+    background-color: tomato;
+    color: black;
+}
+
+.view{
+    border-color: darkturquoise;
+    background-color: paleturquoise;
+    color: gray;
+}
+
+.buy{
+    border-color: mediumvioletred;
+    background-color: pink;
+    color: gray;
+}
+
+.btn-outline-view:hover{
+    background-color: aqua;
+    color: black;
+}
+
+.btn-outline-buy:hover{
+    background-color: red;
+    color: black;
+}
+
+.showtime{
+    background-color: hotpink;
+    font-size: 25px;
+    color: black;
+    width: 250px;
+    height: 50px;
+    padding: 10px; 
+    left: 100px;
+}
+
+.back-sh{
+    background-color: lightgreen;
+    font-size: 25px;
+    color: black;
+    width: 150px;
+    height: 50px;
+    padding: 10px; 
+    left: 150px;
+}
+
+.more{
+    background-color: lightgreen;
+    font-size: 25px;
+    color: black;
+    width: 200px;
+    height: 50px;
+    padding: 10px; 
+    position: sticky;
+    left: 150px;
+}
+
+.nowshow{
+    border: 1rem;
+    background-color: antiquewhite;
+    color: black;
+    width: 1300px;
+    height: 50px;
+    position: sticky;
+}
+
+.back-edit{
+    background-color: lightgreen;
+    font-size: 18px;
+    color: black;
+    width: 100px;
+    height: 30px;
+    padding: 10px; 
+}
+
+.comment{
+    background-color: mediumslateblue;
+    color: black;
+}
+
+.card:hover{
+    transform: translateY(-3px);
+}
+
+.card:active{
+    transform: translateY(-1px);
+}
+
+.bg-box{
+    background-color: rgb(255, 230, 227);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 50px  ;
+  }
+
+.box{
+    border: 5px solid lightsalmon;
+    border-radius: 50px ;
+    background-color: lemonchiffon;
+    width: 500px;
+    height: 320px; 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -260px;
+}
+
+.box-register{
+    border: 5px solid lightsalmon;
+    border-radius: 50px ;
+    background-color: lemonchiffon;
+    width: 900px;
+    height: 650px; 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -440px;
+}
+
+.newcomment{
+    border: 5px solid hotpink;
+    border-radius: 50px ;
+    background-color: mistyrose;
+    width: 800px;
+    height: 260px; 
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -400px;
+}
+
+.ok{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 10px;
+    width: 400px;
+}
+
+.create{
+    background-color: khaki; 
+    color: black;
+}
+
+.back-newcom{
+    background-color: lightgreen; 
+    color: black;
+}
+
+.fa{
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .fa:hover {
+    color: red;
+  }
+
+.select-cinema{
+    background-color: lemonchiffon;
+}

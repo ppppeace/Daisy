@@ -1,0 +1,75 @@
+<%- include("../partials/header.ejs") %>
+<div class="container py-5 ">
+    <div class="row ">
+        <div class="col-md-8 d-flex align-items-start">
+            <div class="icon-square text-dark flex-shrink-0 me-3">
+                <img src="<%= movie.img %>" height="400px" class="index-image">
+            </div>
+            <div>
+                <h5 class="date"><%= movie.date%></h5>
+                <h2><%= movie.name%> </h2>
+                <h6>Genre: <%= movie.genre%></h6>
+                <i class="fas fa-clock" style="font-size:22px;"><%= movie.time%> min   </i>
+                <br><br><br><br>
+                <br><br><a href="/movie/<%= movie._id %>" class="more btn">More Detail</a>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-start">
+            <video controls width="500" height="400">
+                <source src="<%= movie.trailer %>" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <br><br>
+    <div>
+        <h2 align = 'center' class="nowshow">Cinema</h2>
+    </div>
+    <div class="album py-5 ">
+        <div class="container">
+            <div class="accordion" id="accordionExample">
+
+                <% theater.forEach(function(theater){ %>
+                    <% theater.movie.forEach(function(movies){ %>
+                        <% if(movies.name == movie.name){ %> 
+                            <% theater.cinema.forEach(function(cinema){ %>     
+                                <div class="container col-xxl-8 bg-white border shadow rounded-3">
+                                    <h4 class="py-3 text-primary"><i class="fas fa-map-marker-alt"></i> <%= cinema.name %></h4>
+                                    <div class="row flex-lg-row align-items-center p-3">
+                                        <div class="col-lg-2">
+                                            <h5>Digital Cinema</h5>
+                                        </div>  
+                                        <div class="col border-start">
+                                            <div class="px-1 py-1">    
+                                                <p class="fs-6"><i class="fas fa-volume-up"></i> ENG</p>
+                                                <% showtime.forEach(function(showtime){ %>
+                                                    <% showtime.theater.forEach(function(showtimetheater){ %>    
+                                                        <% if(showtimetheater._id.equals(theater._id)){ %>
+                                                            <% let currentDate = new Date(); %>
+                                                            <% let showtimeDate = new Date(currentDate.getMonth()+"-"+currentDate.getDate()+"-"+currentDate.getFullYear()+" "+showtime.time); %>
+                                                            <% currentDate.setHours(currentDate.getHours() + 7); %>
+                                                            <% showtimeDate.setHours(showtimeDate.getHours() + 7); %>
+                                                            <% showtimeDate.setMonth(showtimeDate.getMonth() + 1); %>
+                                                            <% if(currentDate >= showtimeDate){ %>
+                                                                <a href="#" class="btn btn-dark disabled" type="button"><%= showtime.time %></a>
+                                                            <% } else { %>
+                                                                <a href="/movie/showtime/<%= movie._id%>/<%= theater._id%>/<%= showtime._id%>" class="btn btn-dark" type="button"><%= showtime.time %></a>
+                                                            <% } %>
+                                                        <% } %>    
+                                                    <% }); %>    
+                                                <% }); %>
+                                            </div>
+                                        </div>      
+                                    </div>
+                                </div>
+                                <br>    
+                            <% }); %>   
+                        <% } %> 
+                    <% }); %>       
+                <% }); %>     
+    
+            </div>
+        </div>
+    </div>
+    
+</div>         
+<%- include("../partials/footer.ejs") %>

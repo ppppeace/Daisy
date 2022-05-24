@@ -1,0 +1,122 @@
+<%- include("../partials/header.ejs") %>
+<div class="container py-5 ">
+    <div class="row ">
+        <div class="col-md-8 d-flex align-items-start">
+            <div class="icon-square flex-shrink-0 me-3">
+                <img src="<%= movie.img %>" height="400px" class="index-image">
+            </div>
+            <div>
+                <h5 class="date"><%= movie.date%></h5>
+                <h2><%= movie.name%> </h2>
+                <h6>Genre: <%= movie.genre%></h6>
+                <h6>Rate: <%= movie.rate%>+</h6>
+                <i class="fas fa-clock" style="font-size:22px;"><%= movie.time%> min </i>
+                <% if(!(currentUser &&  currentUser.isAdmin)){ %>
+                    <% if(!currentUser){ %>
+                        <form action='/movie/<%= movie._id %>/favourite' method='POST' id="postform">
+                            <button type="submit" class="btn btn-danger" id="postbutton"><i class="far fa-heart"></i> Add to favourite</button>
+                        </form>
+                    <% } else { %>
+                        <% if(Array.isArray(favourite) && favourite.length){ %>
+                            <% favourite.forEach(function(ufavourite){ %>
+                                <% ufavourite.user.forEach(function(users){ %>
+                                    <% if(users._id.equals(currentUser._id)){ %>
+                                        <form action="/movie/<%= movie._id %>/favourite?_method=DELETE" method="POST">
+                                            <input type="hidden" class="form-control" name='movies' value="<%= movie._id %>">
+                                            <button type="submit" class="btn btn-danger"><i class="fas fa-heart"></i> Remove from favourite</button>
+                                        </form>
+                                    <% } else { %>
+                                        <form action='/movie/<%= movie._id %>/favourite' method='POST'>
+                                            <button type="submit" class="btn btn-danger"><i class="far fa-heart"></i> Add to favourite</button>
+                                        </form> 
+                                    <% } %>   
+                                <% }); %>    
+                            <% }); %>
+                        <% } else { %>
+                            <form action='/movie/<%= movie._id %>/favourite' method='POST'>
+                                <button type="submit" class="btn btn-danger"><i class="far fa-heart"></i> Add to favourite</button>
+                            </form> 
+                        <% } %>    
+                    <% } %>        
+                <% } %>
+
+                <% if(currentUser &&  currentUser.isAdmin) { %>
+                    <div>
+                        <form id= 'delete-form' action = "/<%= movie._id %>?_method=DELETE" method ="POST">
+                            <button type='submit' class="btn-delete btn btn-sm">Delete</button>
+                        </form>
+                        <a href="/movie/<%= movie._id %>/edit" class="btn btn-sm btn-edit">Edit</a>
+                    </div>
+                <% } else if(!(currentUser &&  currentUser.isAdmin)) {%>
+                <br><br>
+                    <% if( movie.status == 'now') { %>
+                        <a href="/movie/showtime/<%= movie._id%>" class="showtime btn">See Showing Time</a>
+                    <% } %>
+                <% } %>
+                <br><br><a href="/movie" class="back-sh btn">Back</a>
+            </div>
+        </div>
+        <div class="col-md-4 d-flex align-items-start">
+            <video controls width="500" height="400">
+                <source src="<%= movie.trailer %>" >
+            </video>
+        </div>
+    </div>
+    <br><br>
+    <h2>Synopsis</h2>
+    <p><%= movie.desc%></p>
+    <br>
+    <div class="py-2">
+        <h2>Crew</h2>
+        <div class="grid-container">
+            <% movie.act.forEach(function(act){ %>
+                <img src="<%= act.img_act%>" height="125px" width="175px" class="px-3">
+            <% }) %>
+        </div>
+        <br><br><br><br>
+        <div class="grid-container">
+            <% movie.act.forEach(function(act){ %>
+                <h5 class="px-3"> <%= act.name_act%> </h5>
+            <% }) %>
+        </div>
+    </div>
+    <div class="py-2">
+        <h2>Director</h2>
+        <div class="grid-container">
+            <% movie.dir.forEach(function(dir){ %>
+                <img src="<%= dir.img_dir %>" height="125px" width="175px" class="px-3">
+            <% }) %>
+        </div>
+        <br><br><br><br>
+        <div class="grid-container">
+            <% movie.dir.forEach(function(dir){ %>
+                <h5 class="px-3"> <%= dir.name_dir%> </h5>
+            <% }) %>
+        </div>
+       
+    </div>
+
+    <div class="py-2">
+        <h2>Comments:</h2>
+        <a href="/movie/<%= movie._id %>/comments/new" class="comment btn">Add New Comment</a>
+        <% movie.comments.forEach(function(comment){ %>
+            <p class="px-3">
+                <div>
+                    <strong><%= comment.author.username %></strong> - <%= comment.text %>
+                    <% if (currentUser && comment.author.id.equals(currentUser._id) || (currentUser &&  currentUser.isAdmin)){ %>
+                        <form id= 'delete-form' action = "/movie/<%= movie._id %>/comments/<%= comment._id %>?_method=DELETE" method ="POST">
+                            <button type='submit' class="btn btn-sm btn-delete">Delete</button>
+                        </form>
+                        <% if (currentUser && comment.author.id.equals(currentUser._id)){ %>
+                            <a href="/movie/<%= movie._id %>/comments/<%= comment._id %>/edit" class="btn btn-sm btn-edit" >Edit</a>
+                        <% } %>
+                    <% } %>    
+                </div>    
+            </p>
+
+        <% }) %>
+        
+    </div>
+    
+</div>         
+<%- include("../partials/footer.ejs") %>

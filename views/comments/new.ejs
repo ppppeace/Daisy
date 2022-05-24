@@ -1,0 +1,18 @@
+<%- include("../partials/header.ejs") %>
+<div class="container">
+    <div class="newcomment my-5" align = 'center'>
+        <h2 class="py-2 my-3"> <%= movie.name%> Movie</h2> 
+        <h3> Add New Your Comment</h3> 
+        <form action="/movie/<%= movie._id %>/comments" method="POST">
+            <div class="mb-3 mx-5 my-3">
+                <input type="text" class="form-control" name= "comment[text]" placeholder="Your Comment">
+            </div>
+            <button type="submit" class="btn btn-primary"> Submit </button>
+            <a href="/movie/<%= movie._id %>" class="back-newcom btn "><b>Go back</b></a>
+        </form>
+    </div>
+</div>
+
+<br><br><br><br><br><br>
+
+<%- include("../partials/footer.ejs") %>
