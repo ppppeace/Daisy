@@ -42,7 +42,7 @@
 
                 <% if(currentUser &&  currentUser.isAdmin) { %>
                     <div>
-                        <form id= 'delete-form' action = "/<%= movie._id %>?_method=DELETE" method ="POST">
+                        <form id= 'delete-form' action = "/movie/<%= movie._id %>?_method=DELETE" method ="POST">
                             <button type='submit' class="btn-delete btn btn-sm">Delete</button>
                         </form>
                         <a href="/movie/<%= movie._id %>/edit" class="btn btn-sm btn-edit">Edit</a>

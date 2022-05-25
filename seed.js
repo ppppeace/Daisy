@@ -766,7 +766,7 @@ const seatlist = [
             },
             //Paragon cinema 1
             {
-                time: "10:30",
+                time: "08:30",
                 seats: seatlist,
                 theater: "628cfef9a95847a82823d27f"
             },

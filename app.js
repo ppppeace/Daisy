@@ -27,7 +27,6 @@ app.use(methodOverride('_method'));
 app.use(flash());
 //seedDB();
 
-
 app.use(require('express-session')({
     secret: 'secret word',
     resave: false,
